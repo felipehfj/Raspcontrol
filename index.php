@@ -2,6 +2,8 @@
 
 namespace lib;
 
+setlocale (LC_ALL, 'pt_BR');
+
 spl_autoload_extensions('.php');
 spl_autoload_register();
 
@@ -30,7 +32,7 @@ $page = 'pages'. DIRECTORY_SEPARATOR.$_GET['page']. '.php';
 $page = file_exists($page) ? $page : 'pages'. DIRECTORY_SEPARATOR .'404.php';
 
 ?><!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
     <title>Raspcontrol</title>
