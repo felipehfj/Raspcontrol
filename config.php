@@ -6,6 +6,8 @@
  * Ensure you have done every other steps described on
  * https://github.com/Bioshox/Raspcontrol/wiki/Enable-URL-Rewriting#configure-your-web-server
  */
+setlocale (LC_ALL, 'pt_BR');
+
 $rewriting = false;
 
 /*
