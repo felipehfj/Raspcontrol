@@ -1,6 +1,9 @@
 <?php
 
 namespace lib;
+
+setlocale (LC_ALL, 'pt_BR');
+
 use lib\Uptime;
 use lib\Memory;
 use lib\CPU;
@@ -72,11 +75,11 @@ function shell_to_html_table_result($shellExecOutput) {
 
 		<table>
           <tr id="check-system">
-            <td class="check"><i class="icon-cog"></i> System</td>
+            <td class="check"><i class="icon-cog"></i> Sistema</td>
             <td class="icon"></td>
             <td class="infos">
               hostname: <span class="text-info"><?php echo Rbpi::hostname(true); ?></span>
-              <br />distribution: <span class="text-info"><?php echo Rbpi::distribution(); ?></span>
+              <br />distribuição: <span class="text-info"><?php echo Rbpi::distribution(); ?></span>
               <br />kernel: <?php echo Rbpi::kernel(); ?>
               <br />firmware: <?php echo Rbpi::firmware(); ?>
             </td>
