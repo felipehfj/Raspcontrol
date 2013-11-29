@@ -3,7 +3,7 @@
 session_start();
 
 set_error_handler(function() {
-  throw new Exception('Failed to open authentification file in <code>'. FILE_PASS .'</code>');
+  throw new Exception('Falha ao abrir o arquivo de configuração em <code>'. FILE_PASS .'</code>');
 });
 
 require 'config.php';
@@ -32,14 +32,14 @@ else if (isset($_POST['username']) && isset($_POST['password']) && !empty($_POST
         fclose($handler);
       }
       else{
-        $_SESSION['message'] = "Database file \"".FILE_PASS."\" is not writable, please check the file owner and rights.";
+        $_SESSION['message'] = " O arquivo de banco de dados \"".FILE_PASS."\" não está acessível, verifique as permissões de acesso ao arquivo.";
       }
     }
     
     if ($_POST['username'] == $username && password_verify($_POST['password'],$password))
       $_SESSION['authentificated'] = true;
     else
-      $_SESSION['message'] = 'Incorrect username or password.';  
+      $_SESSION['message'] = 'Usuário ou senha incorreta.';  
   } catch(Exception $e) {
     $_SESSION['message'] = $e->getMessage();
   }
